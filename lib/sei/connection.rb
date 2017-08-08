@@ -1,22 +1,14 @@
 module Sei
-
-  require "singleton"
-
   class Connection
-
-    include Singleton
-
-    def client
-      @client ||= Savon.client wsdl: Sei.configuration.wsdl, follow_redirects: Sei.configuration.follow_redirects,
-                                pretty_print_xml: Sei.configuration.pretty_print_xml, convert_request_keys_to: :camelcase
+    def self.instance
+      ws_connection_mode = Sei.configuration.sei_ws_connection_mode
+      if ws_connection_mode == :soap
+        Sei::ConnectionAdapters::Soap.instance
+      elsif ws_connection_mode == :http_soap_proxy
+        Sei::ConnectionAdapters::HttpAsSoapProxy.instance
+      else
+        raise 'Invalid WS connection mode informed'
+      end
     end
-
-    def call(service, message)
-      request = client.build_request service, message: message
-      Sei::Printer.xp request.body
-      client.call service, message
-    end
-
   end
-
 end

@@ -4,6 +4,8 @@ require 'savon'
 require 'valuable'
 require 'gem_config'
 
+require 'sei/connection_adapters/soap'
+require 'sei/connection_adapters/http_as_soap_proxy'
 require 'sei/connection'
 require 'sei/printer'
 require 'sei/servico'
@@ -15,7 +17,6 @@ require 'sei/estruturas/retorno_inclusao_documento'
 require 'sei/estruturas/retorno_geracao_procedimento'
 
 module Sei
-
   include GemConfig::Base
 
   with_configuration do
@@ -24,6 +25,9 @@ module Sei
     has :pretty_print_xml
     has :sigla, classes: String
     has :identificacao, classes: String
+    has :sei_ws_connection_mode,
+        values: %i[soap http_soap_proxy],
+        default: :soap
+    has :http_soap_proxy_url, classes: String
   end
-  
 end

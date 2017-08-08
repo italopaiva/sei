@@ -36,5 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'gem_config'
   spec.add_development_dependency 'savon'
   spec.add_development_dependency 'valuable'
+  spec.add_development_dependency 'http'
 
 end
