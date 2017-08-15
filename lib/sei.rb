@@ -17,7 +17,12 @@ require 'sei/estruturas/procedimento'
 require 'sei/estruturas/retorno_inclusao_documento'
 require 'sei/estruturas/retorno_geracao_procedimento'
 
+require 'sei/v3/estruturas/procedimento'
+require 'sei/v3/estruturas/retorno_inclusao_documento'
+require 'sei/v3/estruturas/retorno_geracao_procedimento'
+
 require 'sei/v3/servicos/base'
+require 'sei/v3/servicos/gerar_procedimento'
 
 module Sei
   include GemConfig::Base
