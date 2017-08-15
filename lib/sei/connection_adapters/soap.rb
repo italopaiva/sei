@@ -15,9 +15,13 @@ module Sei
       end
 
       def call(service, message)
-        request = client.build_request service, message: message
+        request = client.build_request service.to_sym, message: message
         Sei::Printer.xp request.body
-        client.call service, message
+        response = client.call service.to_sym, message: message
+        # Savon pattern of response index
+        response_index = service.to_s + '_response'
+        # The key ":parametros" is a SEI pattern of response
+        response.body[response_index.to_sym][:parametros]
       end
     end
   end
