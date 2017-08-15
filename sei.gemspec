@@ -33,9 +33,10 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency 'gem_config'
-  spec.add_development_dependency 'savon'
-  spec.add_development_dependency 'valuable'
-  spec.add_development_dependency 'http'
-
+  spec.add_runtime_dependency 'gem_config'
+  spec.add_runtime_dependency 'savon'
+  spec.add_runtime_dependency 'valuable'
+  spec.add_runtime_dependency 'http'
+  spec.add_runtime_dependency 'plissken'
+  spec.add_runtime_dependency 'facets'
 end

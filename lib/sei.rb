@@ -3,6 +3,7 @@ require 'base64'
 require 'savon'
 require 'valuable'
 require 'gem_config'
+require 'plissken'
 
 require 'sei/connection_adapters/soap'
 require 'sei/connection_adapters/http_as_soap_proxy'
@@ -15,6 +16,8 @@ require 'sei/estruturas/documento'
 require 'sei/estruturas/procedimento'
 require 'sei/estruturas/retorno_inclusao_documento'
 require 'sei/estruturas/retorno_geracao_procedimento'
+
+require 'sei/v3/servicos/base'
 
 module Sei
   include GemConfig::Base
