@@ -9,3 +9,11 @@ Rake::TestTask.new(:test) do |t|
 end
 
 task :default => :test
+
+task :servicos do
+  require 'sei'
+  puts "Serviços implementados:\n\n"
+  Sei::V3::Servicos::Base.all_services.each do |service|
+    puts service.name.split('::').last
+  end
+end

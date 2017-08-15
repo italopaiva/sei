@@ -43,6 +43,10 @@ module Sei
             "Método params() não implementado no serviço #{name}"
           )
         end
+
+        def self.all_services
+          ObjectSpace.each_object(Class).select { |klass| klass < self }
+        end
       end
     end
   end
