@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/italopaiva/sei.svg?branch=master)](https://travis-ci.org/italopaiva/sei)
+
+[![codecov](https://codecov.io/gh/italopaiva/sei/branch/master/graph/badge.svg)](https://codecov.io/gh/italopaiva/sei)
+
 # SEI!
 
 Esta gem facilita o acesso ao webservice do SEI!. O retorno do webservice é automaticamente associado às classes de retorno que possuem os atributos retornados por cada serviço. Estes atributos são acessados através de assessores da classe.
@@ -50,7 +54,7 @@ onde
 
 A gem suporta dois modos de conexão com o WebServices do SEI, utilizando o protocolo SOAP (comportamento default) ou através
 de um proxy HTTP. Esta funcionalidade foi adicionada pois a comunicação direta como o WebService via SOAP em ruby muitas vezes falhava
-em alguns cenários. Dos cenários testados (em Ruby, Python e PHP), a comunicação direta via SOAP só é possível sem falhas por meio do cliente SOAP do PHP (linguagem de implementação do SEI), portanto foi criada uma aplicação em PHP ([LINK PARA A APLICAÇÃO]()) que funciona como um intermediador da comunicação, onde recebe uma requisição HTTP com os dados do serviço do SEI em JSON, chama o WebService do SEI via cliente SOAP PHP e devolve os dados em JSON (e não XML!!).
+em alguns cenários. Dos cenários testados (em Ruby, Python e PHP), a comunicação direta via SOAP só é possível sem falhas por meio do cliente SOAP do PHP (linguagem de implementação do SEI), portanto foi criada uma [aplicação em PHP](https://github.com/italopaiva/sei-soap-proxy-app) que funciona como um intermediador da comunicação, onde recebe uma requisição HTTP com os dados do serviço do SEI em JSON, chama o WebService do SEI via cliente SOAP PHP e devolve os dados em JSON (e não XML!!).
 Para consumir o WebService do SEI por meio de um proxy HTTP, a configuração da gem ficaria assim:
 
  ```ruby
