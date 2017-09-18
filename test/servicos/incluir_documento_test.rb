@@ -2,13 +2,9 @@ require 'test_helper'
 
 describe 'Sei::V3::Servicos::IncluirDocumento' do
   before do
-    @wsdl = 'test URL'
     @sigla_sei = 'SIGLA TESTE'
     @identificacao = 'Identificação do serviço'
     Sei.configure do |config|
-      config.wsdl = @wsdl
-      config.follow_redirects = true
-      config.pretty_print_xml = true
       config.sigla = @sigla_sei
       config.identificacao = @identificacao
     end
