@@ -1,10 +1,10 @@
 module Sei
   module V3
     module Servicos
-      require 'facets/string/snakecase'
-      require 'facets/hash/deep_rekey'
       class Base
         def self.call(*args)
+          require 'facets/string/snakecase' unless ''.respond_to? :snakecase
+          require 'facets/hash/deep_rekey' unless {}.respond_to? :deep_rekey
           service = name.split('::').last.snakecase.to_sym
           message = params(*args)
           respond Sei::Connection.instance.call(
