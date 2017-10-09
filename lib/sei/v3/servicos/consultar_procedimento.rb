@@ -4,11 +4,11 @@ module Sei
       class ConsultarProcedimento < Sei::V3::Servicos::Base
 
         def self.params(
-          id_unidade, protocolo, retornar_andamento_geracao: 'S',
-          retornar_assuntos: 'S', retornar_interessados: 'S',
-          retornar_observacoes: 'S', retornar_andamento_conclusao: 'S',
-          retornar_ultimo_andamento: 'S', retornar_unidades_procedimento_aberto: 'S',
-          retornar_procedimentos_relacionados: 'S', retornar_procedimentos_anexados: 'S'
+          protocolo, id_unidade: nil, retornar_andamento_geracao: 'N',
+          retornar_assuntos: 'N', retornar_interessados: 'N',
+          retornar_observacoes: 'N', retornar_andamento_conclusao: 'N',
+          retornar_ultimo_andamento: 'N', retornar_unidades_procedimento_aberto: 'N',
+          retornar_procedimentos_relacionados: 'N', retornar_procedimentos_anexados: 'N'
         )
           {
             SiglaSistema: Sei.configuration.sigla,
