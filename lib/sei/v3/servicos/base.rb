@@ -1,10 +1,10 @@
 module Sei
   module V3
     module Servicos
-      require 'facets/string/snakecase'
-      require 'facets/hash/deep_rekey'
       class Base
         def self.call(*args)
+          require 'facets/string/snakecase'
+          require 'facets/hash/deep_rekey'
           service = name.split('::').last.snakecase.to_sym
           message = params(*args)
           respond Sei::Connection.instance.call(
@@ -24,6 +24,7 @@ module Sei
 
         # Simbolize all keys in the response object
         def self.parse_response(response)
+          require 'facets/hash/deep_rekey'
           response.deep_rekey!
           response.each do |_key, value|
             if value.is_a? Hash

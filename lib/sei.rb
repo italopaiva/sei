@@ -25,6 +25,7 @@ require 'sei/v3/estruturas/retorno_geracao_procedimento'
 require 'sei/v3/servicos/base'
 require 'sei/v3/servicos/gerar_procedimento'
 require 'sei/v3/servicos/incluir_documento'
+require 'sei/v3/servicos/consultar_procedimento'
 
 module Sei
   include GemConfig::Base
