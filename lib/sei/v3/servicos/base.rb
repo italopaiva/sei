@@ -25,7 +25,7 @@ module Sei
         # Simbolize all keys in the response object
         def self.parse_response(response)
           require 'facets/hash/deep_rekey'
-          response.deep_rekey!
+          response.deep_rekey! if response.is_a? Hash
           response.each do |_key, value|
             if value.is_a? Hash
               value.deep_rekey!

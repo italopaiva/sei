@@ -26,6 +26,7 @@ require 'sei/v3/servicos/base'
 require 'sei/v3/servicos/gerar_procedimento'
 require 'sei/v3/servicos/incluir_documento'
 require 'sei/v3/servicos/consultar_procedimento'
+require 'sei/v3/servicos/listar_hipoteses_legais'
 
 module Sei
   include GemConfig::Base
