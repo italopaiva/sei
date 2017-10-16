@@ -4,6 +4,7 @@ require 'savon'
 require 'valuable'
 require 'gem_config'
 require 'plissken'
+require 'active_support/core_ext/string/inflections'
 
 require 'sei/connection_adapters/soap'
 require 'sei/connection_adapters/http_as_soap_proxy'

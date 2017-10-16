@@ -42,4 +42,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'http'
   spec.add_runtime_dependency 'plissken'
   spec.add_runtime_dependency 'facets'
+  spec.add_runtime_dependency 'activesupport'
 end
